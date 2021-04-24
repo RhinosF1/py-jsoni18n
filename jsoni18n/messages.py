@@ -1,5 +1,6 @@
-from jsoni18n.languages import getAvailableLanguages
 from json import loads
+
+from jsoni18n.languages import getAvailableLanguages
 
 
 def getMessages(language, messagefiles):

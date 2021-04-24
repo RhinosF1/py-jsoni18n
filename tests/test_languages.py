@@ -1,4 +1,4 @@
-from jsoni18n.languages import getLangDict, getAvailableLanguages
+from jsoni18n.languages import getAvailableLanguages, getLangDict
 
 
 def test_lanugage_dict_is_correct():
