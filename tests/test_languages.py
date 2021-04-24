@@ -12,7 +12,7 @@ def test_lanugage_dict_is_correct():
     assert langdict['kao'] == 'Xaasongaxango'
     assert langdict['mky'] == 'East Makian'
     assert langdict['fra'] == 'French'
-    assert not langdict.has_key('aaj')
+    assert 'aaj' not in langdict
 
 
 def test_get_available_languages_exists():
