@@ -17,8 +17,8 @@ with open('dev-requirements.txt') as dev_requirements_file:
 setup(
     name='jsoni18n',
     version='0.0.1',
-    url='https://github.com/Pycryptor10/sqlite-runner',
-    description='Simple script for making SQL Queries easier.',
+    url='https://github.com/Pycryptor10/py-jsoni18n',
+    description='A simple i18n system using json + pycountry alpha_3 ISO codes.',
     long_description=readme,  # + '\n\n' + history,
     long_description_content_type='text/markdown',  # This is important!
     author='Pycryptor10',
