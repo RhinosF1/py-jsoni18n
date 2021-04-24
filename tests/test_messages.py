@@ -1,5 +1,6 @@
-from jsoni18n.messages import getMessages
 from pytest import fixture
+
+from jsoni18n.messages import getMessages
 
 
 @fixture
