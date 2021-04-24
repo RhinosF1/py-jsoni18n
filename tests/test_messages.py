@@ -22,8 +22,9 @@ def test_fails_on_non_existent(get_message_location):
     failed = False
     try:
         getMessages('aaa', get_message_location)
-    except ValueError:
+    except ValueError as e:
         failed = True
+        assert str(e) == "Language is not available"
     assert failed
 
 
@@ -31,8 +32,9 @@ def test_fails_on_lang_invalid_but_message_exists(get_message_location):
     failed = False
     try:
         getMessages('aaj', get_message_location)
-    except ValueError:
+    except ValueError as e:
         failed = True
+        assert str(e) == "Language is not available"
     assert failed
 
 
@@ -40,6 +42,7 @@ def test_fails_on_lang_invalid_and_no_message(get_message_location):
     failed = False
     try:
         getMessages('aam', get_message_location)
-    except ValueError:
+    except ValueError as e:
         failed = True
+        assert str(e) == "Language is not available"
     assert failed
