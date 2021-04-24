@@ -8,7 +8,7 @@ with open('README.md') as readme_file:
 
 with open('requirements.txt') as requirements_file:
     requirements = list(requirements_file.readlines())
-    
+
 
 with open('dev-requirements.txt') as dev_requirements_file:
     dev_requirements = list(dev_requirements_file.readlines())
