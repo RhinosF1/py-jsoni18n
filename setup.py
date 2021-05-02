@@ -22,7 +22,7 @@ setup(
     version='0.0.1',
     url='https://github.com/Pycryptor10/py-jsoni18n',
     description='A simple i18n system using json + pycountry alpha_3 ISO codes.',
-    keywords='pycountry localization json i18n l10n internationalisation'
+    keywords='pycountry localization json i18n l10n internationalisation',
     long_description=readme,  # + '\n\n' + history,
     long_description_content_type='text/markdown',  # This is important!
     author=username,
