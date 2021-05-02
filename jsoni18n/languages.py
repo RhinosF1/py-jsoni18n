@@ -1,3 +1,4 @@
+"""Get information on langauges from pycountry."""
 from pycountry import languages
 
 
