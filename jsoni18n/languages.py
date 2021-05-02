@@ -18,7 +18,7 @@ def get_available_languages(message_location):
     """Get a dict with code: name for each language that is in pycountry.
 
     Args:
-        messageLocation (str): path to messages.  Example: /path/{}.json
+        message_location (str): path to messages.  Example: /path/{}.json
 
     Returns:
         list: list of valid lanuages that have a file in messagelocation.
