@@ -27,8 +27,8 @@ setup(
     long_description_content_type='text/markdown',  # This is important!
     author=username,
     author_email=email,
-    maintainer=username
-    maintainer_email=email
+    maintainer=username,
+    maintainer_email=email,
     packages=find_packages('.'),
     include_package_data=True,
     install_requires=requirements,
