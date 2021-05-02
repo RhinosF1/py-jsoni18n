@@ -14,7 +14,7 @@ def get_lang_dict():
     return langdict
 
 
-def get_available_languages(messageLocation):
+def get_available_languages(message_location):
     """Get a dict with code: name for each language that is in pycountry.
 
     Args:
@@ -23,11 +23,11 @@ def get_available_languages(messageLocation):
     Returns:
         list: list of valid lanuages that have a file in messagelocation.
     """
-    availableLanguages = []
+    available_languages = []
     for langcode in get_lang_dict():
         try:
-            open(messageLocation.format(langcode), 'r')
-            availableLanguages.append(langcode)
+            open(message_location.format(langcode), 'r')
+            available_languages.append(langcode)
         except (OSError, IOError):  # https://stackoverflow.com/a/15032444
             pass
-    return availableLanguages
+    return available_languages
