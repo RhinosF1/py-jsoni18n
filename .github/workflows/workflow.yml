@@ -58,6 +58,8 @@ jobs:
       run: flake8 . --max-line-length=175
     - name: Run tests
       run: pytest
+    - name: Build docs
+      run: pdoc --html jsoni18n --force
     - name: Verify dependencies
       run: |
         pip check
