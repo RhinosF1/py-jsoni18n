@@ -19,7 +19,7 @@ email = 'Pycryptor10@gmail.com'
 
 setup(
     name='jsoni18n',
-    version='0.0.1',
+    version='0.1.0',
     url='https://github.com/Pycryptor10/py-jsoni18n',
     description='A simple i18n system using json + pycountry alpha_3 ISO codes.',
     keywords='pycountry localization json i18n l10n internationalization',
