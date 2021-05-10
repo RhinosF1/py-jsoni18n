@@ -25,7 +25,7 @@ def get_messages(language, messagefiles, fallback='eng', fileformat='json'):
         messages = loads(messagefileeng.read())
         if language in available_lang_codes:
             if language != fallback:
-                with open(f'{messagefiles.format(fallback)}.{fileformat}', 'r') as messagefilelangs:
+                with open(f'{messagefiles.format(language)}.{fileformat}', 'r') as messagefilelangs:
                     filedata = loads(messagefilelangs.read())
                     for message in filedata.keys():
                         messages[message] = filedata[message]
