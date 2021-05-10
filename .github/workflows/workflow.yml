@@ -16,10 +16,10 @@ jobs:
         python: ['3.6', '3.7', '3.8', '3.9', '3.9-dev', '3.10-dev']
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
+    - name: Set up Python ${{ matrix.python }} on ${{ matrix.os }} 
       uses: actions/setup-python@v2
       with:
-        python-version: '3.6'
+        python-version: ${{ matrix.python }}
     - name: Install Caches (Linux)
       uses: actions/cache@v2
       if: startsWith(runner.os, 'Linux')
