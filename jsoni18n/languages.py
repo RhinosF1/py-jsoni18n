@@ -14,12 +14,12 @@ def get_lang_dict():
     return langdict
 
 
-def get_available_languages(message_location, format='json'):
+def get_available_languages(message_location, fiileformat='json'):
     """Get a dict with code: name for each language that is in pycountry.
 
     Args:
         message_location (str): path to messages.  Example: /path/{}
-        format (str): filetype. Default: json.
+        fileformat (str): filetype. Default: json.
 
     Returns:
         list: list of valid lanuages that have a file in messagelocation.
@@ -27,7 +27,7 @@ def get_available_languages(message_location, format='json'):
     available_languages = []
     for langcode in get_lang_dict():
         try:
-            open(f'{message_location.format(langcode)}.{format}, 'r')
+            open(f'{message_location.format(langcode)}.{fileformat}', 'r')
             available_languages.append(langcode)
         except (OSError, IOError):  # https://stackoverflow.com/a/15032444
             pass
