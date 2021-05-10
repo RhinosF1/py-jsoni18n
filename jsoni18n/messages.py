@@ -10,6 +10,7 @@ def get_messages(language, messagefiles, fallback='eng'):
     Args:
         language (str): language to load
         messagefiles (str): path to messages.  Example: /path/{}.json
+        fallback (str): fallback language if requested is missing messages. Default: 'eng'
 
     Returns:
         dict: message-name: value for each detected message
