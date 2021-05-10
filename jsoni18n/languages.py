@@ -1,6 +1,7 @@
 """Get information on langauges from pycountry."""
-from pycountry import languages
 from glob import glob
+
+from pycountry import languages
 
 
 def get_lang_dict():
