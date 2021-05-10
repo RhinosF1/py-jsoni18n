@@ -1,5 +1,6 @@
 """Get information on langauges from pycountry."""
 from pycountry import languages
+from glob import glob
 
 
 def get_lang_dict():
@@ -25,10 +26,8 @@ def get_available_languages(message_location, fileformat='json'):
         list: list of valid lanuages that have a file in messagelocation.
     """
     available_languages = []
-    for langcode in get_lang_dict():
-        try:
-            open(f'{message_location.format(langcode)}.{fileformat}', 'r')
-            available_languages.append(langcode)
-        except (OSError, IOError):  # https://stackoverflow.com/a/15032444
-            pass
+    for name in glob(f'{message_location.rstrip('/')}.{fileformat}'):
+        lang = name[:-(len(fileformat))][len(message_location.rstrip('/')):]
+        if lang in get_lang_dict():
+            available_languages.append(lang)
     return available_languages
