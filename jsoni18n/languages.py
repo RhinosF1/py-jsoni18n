@@ -26,6 +26,9 @@ def get_available_languages(message_location, fileformat='json'):
 
     Returns:
         list: list of valid lanuages that have a file in messagelocation.
+    
+    Raises:
+        ValueError: No languages could be found
     """
     available_languages = []
     pattern = f'{message_location.rstrip("/")}/*.{fileformat}'
