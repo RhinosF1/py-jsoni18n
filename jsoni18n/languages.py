@@ -32,7 +32,7 @@ def get_available_languages(message_location, fileformat='json'):
     """
     available_languages = []
     pattern = f'{message_location.rstrip("/")}/*.{fileformat}'
-    for name in glob(pattern):
+    for name in glob(pattern, recursive=True):
         lang = name[:-(len(fileformat))][len(message_location.rstrip('/')):]
         if lang in get_lang_dict():
             available_languages.append(lang)
