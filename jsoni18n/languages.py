@@ -1,6 +1,7 @@
 """Get information on langauges from pycountry."""
 from glob import glob
 from warnings import warn
+from os import getcwd
 
 from pycountry import languages
 
@@ -31,9 +32,9 @@ def get_available_languages(message_location, fileformat='json'):
         ValueError: No languages could be found
     """
     available_languages = []
-    pattern = f'{message_location.rstrip("/")}/*.{fileformat}'
+    pattern = f'{getcwd()}/{message_location.rstrip("/")}/*.{fileformat}'
     for name in glob(pattern, recursive=True):
-        lang = name[:-(len(fileformat))][len(message_location.rstrip('/')):]
+        lang = name[:-(len(fileformat))][len(f'{getcwd()}/{message_location.rstrip("/")}'):]
         if lang in get_lang_dict():
             available_languages.append(lang)
         else:
