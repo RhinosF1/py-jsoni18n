@@ -6,7 +6,7 @@ from jsoni18n.messages import get_messages
 
 @fixture
 def get_message_location():
-    """Store location of message file."""
+    """Store location of message file."""  # noqa: DAR101, DAR201
     return "tests/data/{}.json"  # noqa: DAR101, DAR201
 
 
