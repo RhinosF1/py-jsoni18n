@@ -1,7 +1,7 @@
 """Test the languages module."""
 from jsoni18n.languages import get_available_languages, get_lang_dict
 
-LANGDIR = 'tests/data/{}'
+LANGDIR = 'tests/data/'
 
 
 def test_lanugage_dict_is_correct():
