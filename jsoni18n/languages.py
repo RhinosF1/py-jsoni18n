@@ -1,5 +1,6 @@
 """Get information on langauges from pycountry."""
 from glob import glob
+from warnings import warn
 
 from pycountry import languages
 
@@ -27,8 +28,13 @@ def get_available_languages(message_location, fileformat='json'):
         list: list of valid lanuages that have a file in messagelocation.
     """
     available_languages = []
-    for name in glob(f'{message_location.rstrip("/")}/*.{fileformat}'):
+    pattern = f'{message_location.rstrip("/")}/*.{fileformat}'
+    for name in glob(pattern):
         lang = name[:-(len(fileformat))][len(message_location.rstrip('/')):]
         if lang in get_lang_dict():
             available_languages.append(lang)
+        else:
+           warn(f'{lang} was found at {name} but is not a valid language', ResourceWarning)
+    if available_languages == []:
+        raise ValueError(f'No languages were found matching: {pattern}. Did you specify the right location and format?')
     return available_languages
