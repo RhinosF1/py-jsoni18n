@@ -55,7 +55,7 @@ jobs:
         python --version
         pip --version
         pip show jsoni18n
-        ls /home/runner/work/py-jsoni18n/py-jsoni18n/tests/data/
+        ls tests/data/
     - name: Lint with flake8
       run: flake8 . --max-line-length=175
     - name: Run tests
