@@ -19,7 +19,8 @@ def get_messages(language, messagefiles, fallback='eng', fileformat='json'):
     Raises:
         ValueError: 'language' parameter does not match a valid language with a file.
     """
-    available_lang_codes = get_available_languages(messagefiles, fileformat=fileformat)
+    available_lang_codes = get_available_languages(
+        messagefiles, fileformat=fileformat)
     with open(f'{messagefiles.format(fallback)}.{fileformat}', 'r') as messagefileeng:
         messages = loads(messagefileeng.read())
         if language in available_lang_codes:
