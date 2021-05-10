@@ -27,7 +27,7 @@ def get_available_languages(message_location, fileformat='json'):
         list: list of valid lanuages that have a file in messagelocation.
     """
     available_languages = []
-    for name in glob(f'{message_location.rstrip('/')}.{fileformat}'):
+    for name in glob(f'{message_location.rstrip("/")}/*.{fileformat}'):
         lang = name[:-(len(fileformat))][len(message_location.rstrip('/')):]
         if lang in get_lang_dict():
             available_languages.append(lang)
