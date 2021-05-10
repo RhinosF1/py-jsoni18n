@@ -4,7 +4,7 @@ from json import loads
 from jsoni18n.languages import get_available_languages
 
 
-def get_messages(language, messagefiles):
+def get_messages(language, messagefiles, fallback='eng'):
     """Get a dict with message-name: value for a language based on file. Default to english version if missing.
 
     Args:
@@ -18,10 +18,10 @@ def get_messages(language, messagefiles):
         ValueError: 'language' parameter does not match a valid language with a file.
     """
     available_lang_codes = get_available_languages(messagefiles)
-    with open(messagefiles.format('eng'), 'r') as messagefileeng:
+    with open(messagefiles.format(fallback), 'r') as messagefileeng:
         messages = loads(messagefileeng.read())
         if language in available_lang_codes:
-            if language != 'eng':
+            if language != fallback:
                 with open(messagefiles.format(language), 'r') as messagefilelangs:
                     filedata = loads(messagefilelangs.read())
                     for message in filedata.keys():
