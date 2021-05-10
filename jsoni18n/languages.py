@@ -14,7 +14,7 @@ def get_lang_dict():
     return langdict
 
 
-def get_available_languages(message_location, fiileformat='json'):
+def get_available_languages(message_location, fileformat='json'):
     """Get a dict with code: name for each language that is in pycountry.
 
     Args:
