@@ -34,7 +34,9 @@ def get_available_languages(message_location, fileformat='json'):
         if lang in get_lang_dict():
             available_languages.append(lang)
         else:
-           warn(f'{lang} was found at {name} but is not a valid language', ResourceWarning)
+            warn(
+                f'{lang} was found at {name} but is not a valid language', ResourceWarning)
     if available_languages == []:
-        raise ValueError(f'No languages were found matching: {pattern}. Did you specify the right location and format?')
+        raise ValueError(
+            f'No languages were found matching: {pattern}. Did you specify the right location and format?')
     return available_languages
