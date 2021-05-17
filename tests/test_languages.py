@@ -1,7 +1,8 @@
 """Test the languages module."""
 from jsoni18n.languages import get_available_languages, get_lang_dict
 
-LANGDIR = 'tests/data/'
+LANGDIR = 'tests/data'
+LANGDIRTRAIL = 'tests/data/'
 
 
 def test_lanugage_dict_is_correct():
@@ -34,4 +35,22 @@ def test_get_available_not_on_missing():
 def test_get_available_not_on_non_lang():
     """Check langlist does not include incorrect language."""
     langlist = get_available_languages(LANGDIR)
+    assert 'aaj' not in langlist
+
+
+def test_get_available_languages_exists_trailing():
+    """Check langlist includes valid file."""
+    langlist = get_available_languages(LANGDIRTRAIL)
+    assert 'eng' in langlist
+
+
+def test_get_available_not_on_missing_trailing():
+    """Check langlist does not include missing file."""
+    langlist = get_available_languages(LANGDIRTRAIL)
+    assert 'aaa' not in langlist
+
+
+def test_get_available_not_on_non_lang_trailing():
+    """Check langlist does not include incorrect language."""
+    langlist = get_available_languages(LANGDIRTRAIL)
     assert 'aaj' not in langlist
