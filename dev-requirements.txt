@@ -7,3 +7,4 @@ build==0.10.0
 pdoc3==0.10.0
 flake8-docstrings==1.7.0
 darglint==1.8.1
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
